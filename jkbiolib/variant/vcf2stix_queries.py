@@ -36,6 +36,9 @@ def vcf2stix_queries(path_vcf, path_out, out_header=False):
                     pass
             else:
                 svlen = variant.INFO.get('SVLEN')
+                if svlen is None:
+                    print("# warning: skipping INS variant with missing SVLEN:", id)
+                    continue
                 right_start = position
                 right_end = position + svlen
             f.write(f"{id}\t{variant.CHROM}\t{left_start}\t{left_end}\t{right_start}\t{right_end}\t{svtype}\n")

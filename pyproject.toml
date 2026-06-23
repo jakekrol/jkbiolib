@@ -10,6 +10,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
     "cyvcf2>=0.30",
+    "pandas>=3.0.3",
     "pytest>=9.0.3",
 ]
 
@@ -36,3 +37,10 @@ testpaths = ["tests"]
 dev = [
     "ipython>=9.14.0",
 ]
+
+[tool.hatchling.build.targets.wheel]
+packages = ["jkbiolib"]
+
+[tool.hatchling.build.targets.wheel.force-include]
+"jkbiolib/data" = "jkbiolib/data"
+
