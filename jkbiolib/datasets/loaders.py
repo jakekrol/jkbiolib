@@ -11,3 +11,27 @@ def thougs_high_cov_short_read_tsv():
 			skiprows=23,
 			comment=None,
 		)
+
+def grch37_genes_bed():
+    """Load the BED file from package data."""
+    data_file = files('jkbiolib').joinpath('data/gencode.v19.annotation.gtf.gene.bed.sorted.gz')
+    with data_file.open('rb') as f:
+        df = pd.read_csv(
+            f,
+            sep='\t',
+            comment=None,
+            compression='gzip'
+        )
+        return df
+    
+def grch37_exons_bed():
+    """Load the BED file from package data."""
+    data_file = files('jkbiolib').joinpath('data/gencode.v19.annotation.gtf.exons.bed.sorted.gz')
+    with data_file.open('rb') as f:
+        df = pd.read_csv(
+            f,
+            sep='\t',
+            comment=None,
+            compression='gzip'
+        )
+        return df
