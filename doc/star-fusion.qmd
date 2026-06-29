@@ -1,0 +1,17 @@
+# star-fusion
+
+Example cancer cell line data from Cancer Cell Line Encyclopedia
+
+K562 cell line
+- https://zenodo.org/records/13363154/files/SRR521460_1.fastq.20M.fq.gz?download=1
+- https://zenodo.org/records/13363154/files/SRR521460_2.fastq.20M.fq.gz?download=1
+
+Do not use -J mode. Instead, call fusions on fastq directly
+```
+# download the genome lib dir (33GB)
+# url: https://data.broadinstitute.org/Trinity/CTAT_RESOURCE_LIB/GRCh37_gencode_v19_CTAT_lib_Mar012021.STAR_v2.7.11a.plug-n-play.tar.gz
+GENOME_LIB_DIR="<path_to_genome_lib_dir>"
+STAR-Fusion --genome_lib_dir $GENOME_LIB_DIR \
+			--left_fq read_1.fastq \
+			--right_fq read_2.fastq \
+			--output_dir star_fusion_outdir
