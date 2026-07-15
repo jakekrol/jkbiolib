@@ -1,7 +1,27 @@
 import pandas as pd
 from importlib.resources import files
 
-def thougs_high_cov_short_read_tsv():
+def thousg_rna_short_read_samples():
+    """Load the TSV file from package data."""
+    data_file = files('jkbiolib').joinpath('data/thousg-rna-short_read-samples.tsv')
+    with data_file.open('r') as f:
+        return pd.read_csv(
+            f,
+            sep='\t',
+            comment=None,
+        )
+
+def thousg_rna_long_read_samples():
+    """Load the TSV file from package data."""
+    data_file = files('jkbiolib').joinpath('data/thousg-rna-long_read-samples.tsv')
+    with data_file.open('r') as f:
+        return pd.read_csv(
+            f,
+            sep='\t',
+            comment=None,
+        )
+
+def thousg_high_cov_short_read_tsv():
     """Load the TSV file from package data."""
     data_file = files('jkbiolib').joinpath('data/thousg-short_read-high_cov.index.tsv')
     with data_file.open('r') as f:
