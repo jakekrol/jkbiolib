@@ -1,8 +1,17 @@
 import pandas as pd
 from importlib.resources import files
 
+def thousg_dna_long_read_samples():
+    data_file = files('jkbiolib').joinpath('data/thousg-dna-long_read-samples.tsv.gz')
+    with data_file.open('r') as f:
+        return pd.read_csv(
+            f,
+            sep='\t',
+            comment=None,
+            compression='gzip'
+        )
+
 def thousg_rna_short_read_samples():
-    """Load the TSV file from package data."""
     data_file = files('jkbiolib').joinpath('data/thousg-rna-short_read-samples.tsv')
     with data_file.open('r') as f:
         return pd.read_csv(
@@ -12,7 +21,6 @@ def thousg_rna_short_read_samples():
         )
 
 def thousg_rna_long_read_samples():
-    """Load the TSV file from package data."""
     data_file = files('jkbiolib').joinpath('data/thousg-rna-long_read-samples.tsv')
     with data_file.open('r') as f:
         return pd.read_csv(
@@ -22,7 +30,6 @@ def thousg_rna_long_read_samples():
         )
 
 def thousg_high_cov_short_read_tsv():
-    """Load the TSV file from package data."""
     data_file = files('jkbiolib').joinpath('data/thousg-short_read-high_cov.index.tsv')
     with data_file.open('r') as f:
         return pd.read_csv(
@@ -33,7 +40,6 @@ def thousg_high_cov_short_read_tsv():
 		)
 
 def grch37_genes_bed():
-    """Load the BED file from package data."""
     data_file = files('jkbiolib').joinpath('data/gencode.v19.annotation.gtf.gene.bed.sorted.gz')
     with data_file.open('rb') as f:
         df = pd.read_csv(
@@ -45,7 +51,6 @@ def grch37_genes_bed():
         return df
     
 def grch37_exons_bed():
-    """Load the BED file from package data."""
     data_file = files('jkbiolib').joinpath('data/gencode.v19.annotation.gtf.exons.bed.sorted.gz')
     with data_file.open('rb') as f:
         df = pd.read_csv(
