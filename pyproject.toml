@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "jkbiolib"
-version = "1.1.0"
+version = "1.1.1"
 description = "Bioinformatics library"
 readme = "README.md"
-requires-python = ">=3.9,<3.14"
+requires-python = ">=3.11"
 dependencies = [
     "cyvcf2>=0.30",
-    "pandas>=3.0.3",
+    "pandas<=3.0.3",
 ]
 
 [dependency-groups]
