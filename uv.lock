@@ -563,11 +563,12 @@ wheels = [
 
 [[package]]
 name = "jkbiolib"
-version = "1.1.4"
+version = "1.2.0"
 source = { editable = "." }
 dependencies = [
     { name = "cyvcf2" },
     { name = "pandas" },
+    { name = "requests" },
 ]
 
 [package.dev-dependencies]
@@ -582,7 +583,8 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "cyvcf2", specifier = ">=0.30" },
-    { name = "pandas", specifier = "<=3.0.3" },
+    { name = "pandas" },
+    { name = "requests", specifier = ">=2.34.2" },
 ]
 
 [package.metadata.requires-dev]
